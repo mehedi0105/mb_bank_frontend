@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family:'Saira', sans-serif;
+}
+.navbar-brand img {
+    height: 50px;
+}
+.open-account-btn {
+    border: 1px solid #dee2e6;
+    padding: 8px 16px;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #000;
+}
+.navbar-nav .nav-link {
+    color: #000;
+    font-weight: bold;
+}
+.open-account-btn:hover{
+ background-color:black;
+ color: white;
+}
+.banner {
+    background-image: url(https://www.nblbd.com/public/assets/home/slider/1709702611_banner_5.jpg);; /* Replace with the path to your image */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 70px;
+}
+.banner-content {
+    background-color: rgb(0 0 0 / 2%); 
+    padding: 20px;
+    border-radius: 8px;
+}
+.banner-buttons .btn {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.banner-btn:hover{
+    background-color: #095016;
+    color: white;
+}
+
+.services-section {
+    background-color: #f6f7f8;
+    padding: 40px 0;
+}
+.service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.service-icon {
+    font-size: 40px;
+    color: #28a745; /* Example color for icons */
+    margin-bottom: 10px;
+}
+.service-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.partner-section {
+    background-color: #f8f9fa;
+}
+
+.partner-section h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* .partner-section .card {
+    display: flex;
+    height: 100%;
+    background-color: #024731;
+    border-radius: 15px;
+    height: 100%;
+} */
+.partner-section .card {
+    position: relative;
+    display: block;
+    background-color: #024731;
+    padding: 25px 30px 25px;
+    height: auto;
+    width: 100%;
+    margin-top: auto;
+    color: white;
+}
+
+
+
+.partner-section .card img {
+    border-radius: 10px;
+}
+
+.partner-section .exchange-rate {
+    background-color: #e0f7e9;
+    border-radius: 10px;
+}
+
+.partner-section .exchange-rate h5 {
+    color: #007b5e;
+}
+
+.partner-section .exchange-rate table th, 
+.partner-section .exchange-rate table td {
+    color: #333;
+}
+
+.partner-section .btn-success {
+    background-color: #007b5e;
+    border: none;
+}
+
+.footer {
+    background-color: #004d28; /* Dark green background */
+    color: #e0f7e9; /* Light green text color */
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #00a550; /* Lighter green on hover */
+}
+
+.footer .social-icons a {
+    font-size: 1.5em;
+}
+
+.footer .btn-success {
+    background-color: #007b5e;; /* Custom green button */
+    border: none;
+}
+
+.footer .btn-success:hover {
+    background-color: #00a550;
+}
+
+.footer address a {
+    color: #e0f7e9; /* Light green for email link */
+}
+
+.footer address a:hover {
+    color: #00a550;
+}
