@@ -78,7 +78,7 @@ const openAccount =async(event)=>{
 
     //     })
 
-    fetch("http://127.0.0.1:8000/openaccount/",{
+    fetch("https://mb-bank-b.onrender.com/openaccount/",{
         method : "POST",
         headers : {
             "Content-Type" : "application/json",
@@ -109,7 +109,7 @@ const handleLogin = async (event) => {
     };
 
 
-    fetch("http://127.0.0.1:8000/login/",{
+    fetch("https://mb-bank-b.onrender.com/login/",{
       method : "POST",
       headers : {
         "Content-Type" : "application/json",
@@ -131,7 +131,7 @@ const handleLogin = async (event) => {
 
 const handleLogout = () => {
   const token = localStorage.getItem('token');
-  fetch("http://127.0.0.1:8000/logout/",{
+  fetch("https://mb-bank-b.onrender.com/logout/",{
     method : "GET",
     headers : {
       "Content-Type" : "application/json",

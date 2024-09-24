@@ -39,3 +39,14 @@ const notifyLogin = ()=> {
         close: true
     }).showToast();
 }
+
+const notifyDeposit = ()=> {
+    Toastify({
+        text: "Deposit Successfull",
+        duration: 3000,
+        gravity: "top",
+        position: "center", 
+        backgroundColor: "#059212",
+        close: true
+    }).showToast();
+}
