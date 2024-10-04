@@ -429,6 +429,137 @@ const handleLoan=(event)=>{
   .catch(error => console.error('Error:', error));
 }
 
+const handleProfile = () =>{
+  const parent = document.getElementById("content-area")
+  const user_id = localStorage.getItem("id")
+  if(parent && parent.innerHTML!==""){
+    parent.innerHTML =="";
+}
+
+  fetch(`https://mb-bank-b.onrender.com/userdetails/${user_id}/`)
+    .then((res)=>res.json())
+    .then((data)=>{
+      parent.innerHTML = `
+      
+        <div class="dashboard-headline">
+            <h2 style="font-size: 26px">My Profile</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <div
+                class="dashboard-list-box job-fields-submit-form no-company-yet"
+              >
+                <div class="post-job-box pb-4">
+                  <div class="headline">
+                    <h3>
+                      <i class="fa-solid fa-folder-plus"></i> Profile Details
+                    </h3>
+                  </div>
+                  <div class="job-submit-page">
+                    <!-- Job Information Fields -->
+
+                    <div class="form-group">
+                      <label for="avatar" class="form-label">Avatar</label
+                      ><br />
+                      <img
+                        src="./images/craiyon_002201_Dark_but_cool_profile_picture_in_HD.png"
+                        height="150px"
+                        alt="profile-img"
+                      />
+                    </div>
+
+                    <div class="form-group" style="width: 100%">
+                      <label for="first-name">First name</label><br />
+                      <input
+                        type="text"
+                        class="form-control p-3"
+                        id="first-name"
+                        placeholder="${data.first_name}"
+                        disabled
+                      />
+                    </div>
+
+                    <div class="form-group" style="width: 100%">
+                      <label for="last-name">Last name</label><br />
+                      <input
+                        type="text"
+                        class="form-control p-3"
+                        id="last-name"
+                        placeholder="${data.last_name}"
+                        disabled
+                      />
+                    </div>
+
+                    <div class="form-group" style="width: 100%">
+                      <label for="email">E-mail</label><br />
+                      <input
+                        type="email"
+                        class="form-control p-3"
+                        id="email"
+                        placeholder="${data.email}"
+                        disabled
+                      />
+                    </div>
+
+                    <div class="form-group" style="width: 100%">
+                      <label for="about-me">About me</label><br />
+                      <textarea name="" class="p-3 w-100" id="" rows="3" disabled>
+Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fuga tempore exercitationem provident perspiciatis incidunt, modi sapiente.</textarea
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <div
+                class="dashboard-list-box job-fields-submit-form no-company-yet"
+              >
+                <div class="post-job-box pb-4">
+                  <div class="headline">
+                    <h3>
+                      <i class="fa-solid fa-folder-plus"></i>  Change Password
+                    </h3>
+                  </div>
+                  <div class="job-submit-page">
+                    <!-- Job Information Fields -->
+
+                    <form class="" id="password-change-form" onsubmit="handlePassword(event)">
+                    <div class="form-group">
+                      <label for="new-password" class="form-label">New Password</label>
+                      <input
+                        type="password"
+                        class="form-control p-3"
+                        id="new-password" name="new-password"
+                        placeholder="Enter new-password"
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="confirm-new-password" class="form-label">Confirm New Password</label>
+                      <input
+                        type="password"
+                        class="form-control p-3"
+                        id="confirm-new-password" name="confirm-new-password"
+                        placeholder="Enter confirm-new-password"
+                      />
+                    </div>
+
+                    <button type="submit" class="mt-3 post-btn p-3">
+                      Save Changes
+                    </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      `
+    })
+}
+
 handleDashbord()
 available_balance()
 handleTransactions()
