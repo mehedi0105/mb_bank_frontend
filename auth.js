@@ -88,10 +88,7 @@ const openAccount =async(event)=>{
         .then((tes)=>tes.json())
         .then(async(test)=>{
             await notifyRegister ()
-<<<<<<< HEAD
             // window.location.href = "./login.html";
-=======
->>>>>>> 554544d345604cdc69e0d8c2196417fa586e8251
         })
         .catch((error) => {
                 console.log(error)
