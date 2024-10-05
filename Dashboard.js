@@ -571,7 +571,8 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     amount : amount,
     loan_type : loan_type,
     loan_status : true,
-    loan_approve : true
+    loan_approve : true,
+    date_created : date_created
   }
   
   console.log(handleLoanApproveData)
@@ -589,7 +590,7 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     })
     .catch((error)=> {
       console.error('Error:', error.message);
-  });
+    });
   
 
 }
