@@ -416,7 +416,7 @@ const handleLoan=(event)=>{
       "loan_approve":false,
       "account":id
   }
-
+  console.log(loan_form_data)
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
     method: 'POST',
     headers: {
