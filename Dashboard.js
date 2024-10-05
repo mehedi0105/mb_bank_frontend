@@ -409,18 +409,18 @@ const handleLoan=(event)=>{
   const amount = form_data.get("amount");
   const authToken = localStorage.getItem('token');
   const id = localStorage.getItem("id")
-
+  console.log("id",id)
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      "id":id,
       "amount":amount,
       "loan_type":loan_type,
       "loan_status":false,
       "loan_approve":false,
+      "account":id
     }),
   })
   .then(response => response.json())
