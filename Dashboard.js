@@ -401,6 +401,7 @@ const hanldeLoadrequest =()=>{
 
 const handleLoan=(event)=>{
   event.preventDefault()
+  alert()
   const form = document.getElementById("deposite-form")
   const form_data = new FormData(form);
 
@@ -419,6 +420,7 @@ const handleLoan=(event)=>{
       "amount":amount,
       "loan_type":loan_type,
       "loan_status":false,
+      "loan_approve":false,
     }),
   })
   .then(response => response.json())
