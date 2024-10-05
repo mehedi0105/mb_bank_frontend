@@ -563,78 +563,39 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
     })
 }
 
-// const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
+const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
 
-//   const handleLoanApproveData = {
-//     id : id,
-//     account : account,
-//     amount : amount,
-//     loan_type : loan_type,
-//     loan_status : true,
-//     loan_approve : true,
-//     date_created : date_created
-//   }
-  
-//   console.log("updated", handleLoanApproveData)
-
-//   const token = localStorage.getItem('token');
-
-//   fetch(`https://mb-bank-b.onrender.com/transaction/loan_request/`,{
-//     method : "PUT",
-//     headers : {
-//       "Content-Type" : "application/json",
-//       "Authorization": `Bearer ${token}`,
-//     },
-//     body: JSON.stringify(handleLoanApproveData)
-//   })
-//     .then((res)=>res.json())
-//     .then((data)=>{
-//       console.log(data)
-//     })
-//     .catch((error)=> {
-//       console.error('Error:', error.message);
-//     });
-  
-
-// }
-const handleLoanApprove = (id, account, amount, loan_type, date_created) => {
   const handleLoanApproveData = {
-    id: id,
-    account: account,
-    amount: amount,
-    loan_type: loan_type,
-    loan_status: true,
-    loan_approve: true,
-    date_created: date_created
-  };
-
-  console.log("Updated data:", handleLoanApproveData);
+    account : account,
+    amount : amount,
+    loan_type : loan_type,
+    loan_status : true,
+    loan_approve : true,
+    date_created : date_created
+  }
+  
+  console.log("updated", handleLoanApproveData)
 
   const token = localStorage.getItem('token');
 
-  fetch(`https://mb-bank-b.onrender.com/transaction/loan_request/`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
+  fetch(`https://mb-bank-b.onrender.com/transaction/loan_request/${id}/`,{
+    method : "PUT",
+    headers : {
+      "Content-Type" : "application/json",
       "Authorization": `Bearer ${token}`,
     },
     body: JSON.stringify(handleLoanApproveData)
   })
-    .then((res) => {
-      // Log the entire response to check if it is HTML or JSON
-      console.log("Raw response:", res);
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-      return res.json();
+    .then((res)=>res.json())
+    .then((data)=>{
+      console.log(data)
     })
-    .then((data) => {
-      console.log("Loan approval response:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error.message);
+    .catch((error)=> {
+      console.error('Error:', error.message);
     });
-};
+  
+
+}
 
 
 const handleLoanStatus =()=>{
