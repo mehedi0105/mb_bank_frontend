@@ -404,24 +404,25 @@ const handleLoan=(event)=>{
   alert()
   const form = document.getElementById("deposite-form")
   const form_data = new FormData(form);
-
-  const loan_type = form_data.get("loan_type");
-  const amount = form_data.get("amount");
+  
   const authToken = localStorage.getItem('token');
   const id = localStorage.getItem("id")
   console.log("id",id)
+
+  const loan_form_data = {
+      "amount": form_data.get("amount"),
+      "loan_type":form_data.get("loan_type"),
+      "loan_status":false,
+      "loan_approve":false,
+      "account":id
+  }
+
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      "amount":amount,
-      "loan_type":loan_type,
-      "loan_status":false,
-      "loan_approve":false,
-      "account":id
-    }),
+    body: JSON.stringify(loan_form_data),
   })
   .then(response => response.json())
   .then(async(data) =>{
