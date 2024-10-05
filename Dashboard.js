@@ -563,6 +563,38 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
     })
 }
 
+const loan_approve=(account,amount)=>{
+  const id = localStorage.getItem("id")
+
+  fetch("https://mb-bank-b.onrender.com/transaction/deposit/", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      "id":id,
+      "amount":amount,
+      "account_no":account,
+    }),
+  })
+  .then(response => response.json())
+  .then((data) =>{
+    console.log(data)
+  })
+  .catch(error => console.error('Error:', error));
+}
+
+const payLoan =(id,amount)=>{
+  fetch(`https://mb-bank-b.onrender.com/useraccount/${id}/`)
+    .then((res)=>res.json())
+    .then(async(data)=>{
+      await loan_approve(data.account_no,amount)
+    })
+    .catch((error)=>{
+      console.error('Error:', error.message);
+    })
+}
+
 const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
 
   const handleLoanApproveData = {
@@ -587,8 +619,8 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     body: JSON.stringify(handleLoanApproveData)
   })
     .then((res)=>res.json())
-    .then((data)=>{
-      console.log(data)
+    .then(async(data)=>{
+      await payLoan(data.account,amount)
     })
     .catch((error)=> {
       console.error('Error:', error.message);
