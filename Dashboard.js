@@ -575,7 +575,7 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     date_created : date_created
   }
   
-  console.log(handleLoanApproveData)
+  console.log("updated", handleLoanApproveData)
 
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
     method : "PUT",
