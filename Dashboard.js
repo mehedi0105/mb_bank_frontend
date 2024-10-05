@@ -587,6 +587,9 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     .then((data)=>{
       console.log(data)
     })
+    .catch((error)=>{
+      console.log(error)
+    })
 
 }
 
