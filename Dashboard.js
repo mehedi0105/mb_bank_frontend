@@ -579,11 +579,11 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
 
   const token = localStorage.getItem('token');
 
-  fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
+  fetch(`https://mb-bank-b.onrender.com/transaction/loan_request/${id}`,{
     method : "PUT",
     headers : {
       "Content-Type" : "application/json",
-      "Authorization": `Bearer ${token}`
+      "Authorization": `Bearer ${token}`,
     },
     body: JSON.stringify(handleLoanApproveData)
   })
