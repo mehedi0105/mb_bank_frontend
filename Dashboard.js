@@ -560,6 +560,20 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
     })
 }
 
+const handleLoanStatus =()=>{
+  fetch("https://mb-bank-b.onrender.com/transaction/loan_request/")
+    .then((res)=>res.json())
+    .then((data)=>{
+      data.forEach(element => {
+          console.log(element)
+      });
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+}
+
 handleDashbord()
 available_balance()
 handleTransactions()
+handleLoanStatus()
