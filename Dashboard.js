@@ -426,7 +426,7 @@ const handleLoan=(event)=>{
   .then(response => response.json())
   .then(async(data) =>{
     // await notifyDeposit()
-    window.location.href='./Dashboard.html'
+    // window.location.href='./Dashboard.html'
   })
   .catch(error => console.error('Error:', error));
 }
