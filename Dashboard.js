@@ -565,7 +565,7 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
 
 const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
 
-  const handleLoanApproveData ={
+  const handleLoanApproveData = {
     id : id,
     account : account,
     amount : amount,
@@ -579,7 +579,7 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
     method : "PUT",
     headers : {
-      "Content-Type" : "application/json",
+      "Content-Type" : "application/json"
     },
     body: JSON.stringify(handleLoanApproveData)
   })
@@ -587,9 +587,10 @@ const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
     .then((data)=>{
       console.log(data)
     })
-    .catch((error)=>{
-      console.log(error)
-    })
+    .catch((error)=> {
+      console.error('Error:', error.message);
+  });
+  
 
 }
 
