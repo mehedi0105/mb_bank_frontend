@@ -359,7 +359,7 @@ const hanldeLoadrequest =()=>{
       <h1>Loan Request</h1>
       <p>We are glad to see you again!</p>
       <div class="deposite-form w-100">
-        <form action="" class="w-100" id="deposite-form" onsubmit="handleWithdrawAmount(event)"> 
+        <form action="" class="w-100" id="deposite-form" onsubmit="handleLoan(event)"> 
         <h2 class="w-100 text-center">LOAN REQUEST</h2>
         <select id="loan-type" name="loan-type" class="form-control w-100 p-3 mb-3" required>
           <option value="" selected>Choose...</option>
