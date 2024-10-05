@@ -563,8 +563,31 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
     })
 }
 
-const handleLoanApprove = (id)=>{
-  console.log(id, " sfa ")
+const handleLoanApprove = (id,account,amount,loan_type,date_created)=>{
+
+  const handleLoanApproveData ={
+    id : id,
+    account : account,
+    amount : amount,
+    loan_type : loan_type,
+    loan_status : true,
+    loan_approve : true
+  }
+  
+  console.log(handleLoanApproveData)
+
+  fetch("https://mb-bank-b.onrender.com/transaction/loan_request/",{
+    method : "PUT",
+    headers : {
+      "Content-Type" : "application/json",
+    },
+    body: JSON.stringify(handleLoanApproveData)
+  })
+    .then((res)=>res.json())
+    .then((data)=>{
+      console.log(data)
+    })
+
 }
 
 const handleLoanStatus =()=>{
@@ -574,7 +597,7 @@ const handleLoanStatus =()=>{
       data.forEach(async(element) => {
           // console.log(element)
           if(element.loan_status===true && element.loan_approve===false){
-            await handleLoanApprove(element.account)
+            await handleLoanApprove(element.id,element.account,element.amount,element.loan_type,element.date_created)
           }
       });
     })
