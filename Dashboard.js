@@ -560,12 +560,19 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit., porro quidem amet fug
     })
 }
 
+const handleLoanApprove = (id)=>{
+  console.log(id, " sfa ")
+}
+
 const handleLoanStatus =()=>{
   fetch("https://mb-bank-b.onrender.com/transaction/loan_request/")
     .then((res)=>res.json())
     .then((data)=>{
-      data.forEach(element => {
-          console.log(element)
+      data.forEach(async(element) => {
+          // console.log(element)
+          if(element.loan_status===true && element.loan_approve===false){
+            await handleLoanApprove(element.account)
+          }
       });
     })
     .catch((error)=>{
