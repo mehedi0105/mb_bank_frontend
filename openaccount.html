@@ -11,6 +11,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="openaccount.css">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="responsive.css">
     <style>
        
         
@@ -36,6 +37,25 @@
             top: 0;
             opacity: 0;
         }
+    @media (min-width: 320px) and (max-width: 480px) {
+        .main {
+        width: 90% !important;
+        height: 987px !important;
+        }
+        label {
+        color: #fff;
+        font-size: 1.3em;
+        justify-content: center;
+        display: flex;
+        margin: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+        }
+        .username-input{
+            width: 90% !important;
+        }
+}
     </style>
 </head>
 <body>
@@ -52,7 +72,7 @@
       <form id="openAccout" onsubmit="openAccount(event)">
         <label for="chk" aria-hidden="true">Account Opening Form</label>
         <div class="form-group col-md-12">
-            <input type="text" class="form-control m-auto" style="width:91%" name="user-name" placeholder="username" required=""/>
+            <input type="text" class="form-control m-auto username-input" style="width:91%" name="user-name" placeholder="username" required=""/>
         </div>
         <div class="row m-auto" style="width:94%">
             <div class="form-group col-md-6">
